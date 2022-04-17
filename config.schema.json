@@ -1,16 +1,29 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "ArcamAVR",
   "pluginType": "platform",
   "singular": true,
   "schema": {
     "type": "object",
+    "required": ["model", "ipAddress"],
     "properties": {
-      "name": {
-        "title": "Name",
+      "model": {
+        "title": "Model",
         "type": "string",
         "required": true,
-        "default": "Example Dynamic Platform"
-      }
+        "default": "AVR11",
+        "oneOf": []
+      },
+      "ipAddress": {
+          "title": "IP Address",
+          "type": "string",
+          "required": true
+      },
+      "port": {
+          "title": "Port",
+          "type": "integer",
+          "required": false,
+          "default": "50000"
+       }
     }
   }
 }
